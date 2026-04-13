@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Force - 幹員情報系統</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --assault: #ff4d4d;
+            --support: #4cd137;
+            --recon: #00a8ff;
+            --engineer: #fbc531;
+            --text: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* 頂部導航 */
+        header {
+            padding: 20px 50px;
+            background: rgba(0,0,0,0.8);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-weight: bold; letter-spacing: 3px; font-size: 1.2rem; }
+
+        .container { max-width: 1400px; margin: 40px auto; padding: 0 20px; }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #222;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 10px;
+            height: 1.8rem;
+            margin-right: 15px;
+            background: var(--accent);
+        }
+
+        /* 網格佈局 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* 卡片設計 */
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #222;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #222;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* 缺圖時的動畫 */
+        .no-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-size: 0.8rem;
+            background: repeating-linear-gradient(45deg, #111, #111 10px, #161616 10px, #161616 20px);
+        }
+
+        .card-content { padding: 20px; }
+        .card-name { font-size: 1.4rem; margin: 0 0 10px 0; font-weight: 800; }
+        .card-desc { font-size: 0.9rem; color: #aaa; line-height: 1.5; }
+
+        /* 顏色標籤 */
+        .assault { --accent: var(--assault); }
+        .support { --accent: var(--support); }
+        .recon { --accent: var(--recon); }
+        .engineer { --accent: var(--engineer); }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">DELTA FORCE DATABASE</div>
+    <div style="color: #666; font-size: 0.8rem;">ACCESS GRANTED // 2026</div>
+</header>
+
+<div class="container">
+    
+    <h2 class="section-title assault">突擊位 / ASSAULT</h2>
+    <div class="grid">
+        <div class="card assault">
+            <div class="card-img" style="background-image: url('https://images.steamusercontent.com/ugc/17313572304416313586/355C85B0DA9713F3CF2F8CD4554DA56DCCA04AC2/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true');"></div>
+            <div class="card-content">
+                <div class="card-name">紅狼</div>
+                <p class="card-desc">核心主角，依賴動力外骨骼獲得爆發性移速與射速，擊倒敵人可回血。</p>
+            </div>
+        </div>
+        <div class="card assault">
